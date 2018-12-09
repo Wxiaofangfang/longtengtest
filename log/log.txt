@@ -1,0 +1,30 @@
+2018-12-09 12:59:07 DEBUG db_query [db.py-16] select * from user where name='消防队1202'
+2018-12-09 12:59:07 DEBUG db_query [db.py-22] ()
+2018-12-09 12:59:07 INFO <module> [run.py-13] 测试开始====================================================================================================
+2018-12-09 12:59:07 DEBUG _new_conn [connectionpool.py-205] Starting new HTTP connection (1): 115.28.108.130:5000
+2018-12-09 12:59:07 DEBUG _make_request [connectionpool.py-393] http://115.28.108.130:5000 "POST /api/user/login/ HTTP/1.1" 200 42
+2018-12-09 12:59:07 DEBUG db_query [db.py-16] select * from user where name='消防队1202'
+2018-12-09 12:59:08 DEBUG db_query [db.py-22] ()
+2018-12-09 12:59:08 DEBUG _new_conn [connectionpool.py-205] Starting new HTTP connection (1): 115.28.108.130:5000
+2018-12-09 12:59:08 DEBUG _make_request [connectionpool.py-393] http://115.28.108.130:5000 "POST /api/user/reg/ HTTP/1.1" 200 126
+2018-12-09 12:59:08 INFO log_case_info [case_log.py-15] --------------------------------------------------
+2018-12-09 12:59:08 INFO log_case_info [case_log.py-16] 执行用例: test_user_reg_normal
+2018-12-09 12:59:08 INFO log_case_info [case_log.py-17] 接口地址: http://115.28.108.130:5000/api/user/reg/
+2018-12-09 12:59:08 INFO log_case_info [case_log.py-18] 请求数据: {"name": "消防队1202", "password": "123456"}
+2018-12-09 12:59:08 INFO log_case_info [case_log.py-19] 期望结果: {
+    "code": "100000",
+    "data": {
+        "name": "消防队1202",
+        "password": "e10adc3949ba59abbe56e057f20f883e"
+    },
+    "msg": "成功"
+}
+2018-12-09 12:59:08 INFO log_case_info [case_log.py-20] 实际结果: {"code":"100000","data":{"name":"\u6d88\u9632\u961f1202","password":"e10adc3949ba59abbe56e057f20f883e"},"msg":"\u6210\u529f"}
+
+2018-12-09 12:59:08 DEBUG db_query [db.py-16] select * from user where name='消防队1202'
+2018-12-09 12:59:08 DEBUG db_query [db.py-22] ((9721, '消防队1202', 'e10adc3949ba59abbe56e057f20f883e'),)
+2018-12-09 12:59:08 DEBUG db_change [db.py-30] delete from user where name = '消防队1202'
+2018-12-09 12:59:08 DEBUG _new_conn [connectionpool.py-205] Starting new HTTP connection (1): 115.28.108.130:5000
+2018-12-09 12:59:08 DEBUG _make_request [connectionpool.py-393] http://115.28.108.130:5000 "POST /api/user/reg/ HTTP/1.1" 200 158
+2018-12-09 12:59:09 INFO <module> [run.py-18] 邮件发送成功
+2018-12-09 12:59:09 INFO <module> [run.py-20] 测试结束====================================================================================================
